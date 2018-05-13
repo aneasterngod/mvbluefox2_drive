@@ -33,3 +33,9 @@ target_link_libraries(mvbluefox2_drv
     mvbluefox2
 
 )
+
+install (TARGETS mvbluefox2 DESTINATION lib)
+install (FILES 
+    ../include/mvbluefox2_common.h  
+    ../include/mvbluefox2_io.h   
+    DESTINATION include)
