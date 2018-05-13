@@ -39,3 +39,8 @@ install (FILES
     ../include/mvbluefox2_common.h  
     ../include/mvbluefox2_io.h   
     DESTINATION include)
+
+get_filename_component(SELF_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(${SELF_DIR}/${CMAKE_BUILD_TYPE}/mvbluefox2_driver.cmake)
+install(FILES mvbluefox2_driverConfig.cmake DESTINATION ${main_lib_dest})
+install(EXPORT ...)
