@@ -1,18 +1,22 @@
 # Dongshin Kim, 2018-05-07 23:12
-set(common_lib /home/dongshin/Shares/lib)
-set(common_include 
-    /home/dongshin/Shares/include
-    /home/dongshin/Shares/mvIMPACT
-)
+set(mvIMPACT_INC_DIR /home/dongshin/Shares/include
+    CACHE PATH "the root include directory that contains mvIMPACT header files" )
+set(mvIMPACT_LIB_DIR /home/dongshin/Shares/lib
+    CACHE PATH "the root lib directory that contains mvIMPACT libraries" )
+
+set(INCLUDE_INSTALL_DIR include/mvbluefox2 )
+set(LIB_INSTALL_DIR lib/ )
+
+
 
 include_directories (
     ${mvbluefox2_drive_SOURCE_DIR}/src
     ${mvbluefox2_drive_SOURCE_DIR}/include    
-    ${common_include}
+    ${mvIMPACT_INC_DIR}
     )
 link_directories (
     ${mvbluefox2_drive_BINARY_DIR}/src
-    ${common_lib}
+    ${mvIMPACT_LIB_DIR}
 )
 
 
@@ -33,11 +37,19 @@ target_link_libraries(mvbluefox2_drv
     mvbluefox2
 
 )
+install (TARGETS mvbluefox2 EXPORT mvbluefox2-targets LIBRARY DESTINATION lib)
 
-install (TARGETS mvbluefox2 EXPORT mvbluefox2-targets DESTINATION lib)
-install (FILES 
-    ../include/mvbluefox2_common.h  
-    ../include/mvbluefox2_io.h   
-    DESTINATION include)
-install(EXPORT mvbluefox2-targets DESTINATION lib/mvbluefox2)
-install(FILES mvbluefox2Config.cmake DESTINATION lib/mvbluefox2)
+
+include(CMakePackageConfigHelpers)
+configure_package_config_file(mvbluefox2Config.cmake.in
+  ${CMAKE_CURRENT_BINARY_DIR}/mvbluefox2Config.cmake
+  INSTALL_DESTINATION ${LIB_INSTALL_DIR}/mvbluefox2/cmake
+  PATH_VARS INCLUDE_INSTALL_DIR LIB_INSTALL_DIR)
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/mvbluefox2ConfigVersion.cmake
+  VERSION 1.0.0
+  COMPATIBILITY SameMajorVersion )
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/mvbluefox2Config.cmake
+              ${CMAKE_CURRENT_BINARY_DIR}/mvbluefox2ConfigVersion.cmake
+        DESTINATION ${LIB_INSTALL_DIR}/mvbluefox2/cmake )
+
