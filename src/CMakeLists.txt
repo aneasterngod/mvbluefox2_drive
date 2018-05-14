@@ -7,7 +7,7 @@ set(mvIMPACT_LIB_DIR /home/dongshin/Shares/lib
 set(INCLUDE_INSTALL_DIR include/mvbluefox2 )
 set(LIB_INSTALL_DIR lib/ )
 
-find_package(OpenCV required)
+find_package(OpenCV REQUIRED)
 
 
 include_directories (
