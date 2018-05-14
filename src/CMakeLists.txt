@@ -7,12 +7,14 @@ set(mvIMPACT_LIB_DIR /home/dongshin/Shares/lib
 set(INCLUDE_INSTALL_DIR include/mvbluefox2 )
 set(LIB_INSTALL_DIR lib/ )
 
+find_package(OpenCV required)
 
 
 include_directories (
     ${mvbluefox2_drive_SOURCE_DIR}/src
     ${mvbluefox2_drive_SOURCE_DIR}/include    
     ${mvIMPACT_INC_DIR}
+    ${OpenCV_INCLUDE_DIRS}
     )
 link_directories (
     ${mvbluefox2_drive_BINARY_DIR}/src
@@ -23,8 +25,7 @@ link_directories (
 add_library(mvbluefox2 SHARED mvbluefox2_io.cpp
 )
 target_link_libraries(mvbluefox2 
-    opencv_core
-    opencv_highgui
+    ${OpenCV_LIBS}
     mvBlueFOX
     mvDeviceManager
     mvPropHandling
