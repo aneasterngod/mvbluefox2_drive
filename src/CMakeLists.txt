@@ -1,5 +1,5 @@
 # Dongshin Kim, 2018-05-07 23:12
-set(mvIMPACT_INC_DIR /home/dongshin/Shares/include
+set(mvIMPACT_INC_DIR /home/dongshin/Shares/mvIMPACT
     CACHE PATH "the root include directory that contains mvIMPACT header files" )
 set(mvIMPACT_LIB_DIR /home/dongshin/Shares/lib
     CACHE PATH "the root lib directory that contains mvIMPACT libraries" )
