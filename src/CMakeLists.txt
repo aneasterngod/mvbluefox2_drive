@@ -20,7 +20,7 @@ link_directories (
 )
 
 
-add_library(mvbluefox2 mvbluefox2_io.cpp
+add_library(mvbluefox2 SHARED mvbluefox2_io.cpp
 )
 target_link_libraries(mvbluefox2 
     opencv_core
