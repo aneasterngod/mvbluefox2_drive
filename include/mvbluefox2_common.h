@@ -1,3 +1,6 @@
+#ifndef MVBLUEFOX2_COMMON
+#define MVBLUEFOX2_COMMON
+
 #include <iostream>
 #include <deque>
 #include <stdio.h>
@@ -15,3 +18,5 @@
 #endif  // MALLOC_TRACE
 
 using namespace std;
+
+#endif
