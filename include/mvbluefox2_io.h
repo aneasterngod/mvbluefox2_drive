@@ -1,3 +1,5 @@
+#ifndef MVBLUEFOX2_IO
+#define MVBLUEFOX2_IO
 #include "mvbluefox2_common.h"
 class mvbluefox2_io
 {
@@ -18,3 +20,5 @@ class mvbluefox2_io
 	Device *m_pDev;
 	std::thread m_captureThread;	
 };
+
+#endif
