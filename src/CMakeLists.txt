@@ -22,7 +22,7 @@ link_directories (
 )
 
 
-add_library(mvbluefox2 SHARED mvbluefox2_io.cpp
+add_library(mvbluefox2 mvbluefox2_io.cpp
 )
 target_link_libraries(mvbluefox2 
     ${OpenCV_LIBS}
@@ -43,7 +43,7 @@ install (FILES
     ../include/mvbluefox2_io.h   
     DESTINATION include/mvbluefox2)
 	
-install (TARGETS mvbluefox2 EXPORT mvbluefox2-targets LIBRARY DESTINATION lib)
+install (TARGETS mvbluefox2 EXPORT mvbluefox2-targets ARCHIVE DESTINATION lib)
 
 
 include(CMakePackageConfigHelpers)
