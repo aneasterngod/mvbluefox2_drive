@@ -22,7 +22,9 @@ link_directories (
 )
 
 
-add_library(mvbluefox2 mvbluefox2_io.cpp
+add_library(mvbluefox2 
+	mvbluefox2_io.cpp
+	ImageData.cpp
 )
 target_link_libraries(mvbluefox2 
     ${OpenCV_LIBS}
@@ -41,6 +43,7 @@ target_link_libraries(mvbluefox2_drv
 install (FILES 
     ../include/mvbluefox2_common.h  
     ../include/mvbluefox2_io.h   
+    ../include/ImageData.h
     DESTINATION include/mvbluefox2)
 	
 install (TARGETS mvbluefox2 EXPORT mvbluefox2-targets ARCHIVE DESTINATION lib)
