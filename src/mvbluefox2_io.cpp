@@ -112,9 +112,12 @@ void mvbluefox2_io::raw2cv(const Request *pRequest, cv::Mat &img)
         break;
     }
     cv::Mat openCVImage(cv::Size(pRequest->imageWidth.read(), pRequest->imageHeight.read()), openCVDataType, pRequest->imageData.read(), pRequest->imageLinePitch.read());
-    m_data.push_back(openCVImage);
-    //    imshow("test ", openCVImage);
-    //    cv::waitKey(3 );
+    ImageData im;
+    im.m_img = openCVImage;
+    std::chrono::high_resolution_clock::time_point p = std::chrono::high_resolution_clock::now();
+    std::chrono::microseconds ms = std::chrono::duration_cast<std::chrono::microseconds>(p.time_since_epoch());
+    im.m_timestamp = ms.count();
+    m_data.push_back(im);
 }
 
 void mvbluefox2_io::acquisition()
