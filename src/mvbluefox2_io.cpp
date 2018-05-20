@@ -2,14 +2,6 @@
 
 static bool s_boTerminated = false;
 
-ImageData::ImageData(){
-	m_timestamp = 0;
-}
-
-ImageData::~ImageData(){
-}
-
-
 mvbluefox2_io::mvbluefox2_io()
 {
 #ifdef MALLOC_TRACE
