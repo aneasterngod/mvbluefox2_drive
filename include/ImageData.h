@@ -1,3 +1,5 @@
+#include "mvbluefox2_common.h"
+
 #ifndef IMAGEDATA
 #define IMAGEDATA
 
