@@ -1,8 +1,8 @@
-#include "mvbluefox2_common.h"
-#include "ImageData.h"
-
 #ifndef MVBLUEFOX2_IO
 #define MVBLUEFOX2_IO
+
+#include "mvbluefox2_common.h"
+#include "ImageData.h"
 
 class mvbluefox2_io
 {
