@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     {
         if (mv.m_data.size() != 0)
         {
-            imshow("test", mv.m_data.front());
+            imshow("test", mv.m_data.front().m_img);
             cv::waitKey(10);            
             mv.m_data.pop_front();
         }
