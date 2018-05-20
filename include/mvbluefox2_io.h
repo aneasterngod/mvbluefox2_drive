@@ -3,9 +3,7 @@
 #include "mvbluefox2_common.h"
 class ImageData{
 public:
-	ImageData(){
-		m_timestamp = 0;
-	}	
+	ImageData();
 	~ImageData();
 public:
 	cv::Mat m_img;
